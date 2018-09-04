@@ -51,7 +51,7 @@ $(document).ready(function() {
 	}  
 
 	// JOIN GROUP SEARCH
-	$(window).keydown(function(event){
+	$("input[name='query']").keydown(function(event){
 		if(event.keyCode == 13) {
 			var query = $("input[name='query']").val();
 			if (query == '') {
@@ -73,7 +73,7 @@ $(document).ready(function() {
 	})
 
 	// DELETE POST GROUP
-	$(window).keydown(function(event){
+	$("input[name='maxwhile']").keydown(function(event){
 		if(event.keyCode == 13) {
 			var maxwhile = $("input[name='maxwhile']").val();
 			if (maxwhile == '') {
