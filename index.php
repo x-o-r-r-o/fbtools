@@ -1,6 +1,10 @@
 <?php 
 ob_start();
 include "config/settings.php";
+if ($mysql->connect_error) {
+    die("Connection failed: " . $mysql->connect_error);
+    exit;
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
@@ -60,10 +64,10 @@ include "config/settings.php";
     <div class="container-fluid">                   
 
         <div class="row">
-         <?php include "template/nav.process.php" ?>
-     </div><!-- // .row -->
+           <?php include "template/nav.process.php" ?>
+       </div><!-- // .row -->
 
- </div><!-- // .container -->
+   </div><!-- // .container -->
 
 </main><!-- // .o-page__content -->
 
