@@ -55,19 +55,17 @@ if ($mysql->connect_error) {
         <div class="c-dropdown dropdown">
             <?php include "template/notification.php"; ?>
         </div>
-
-        <?php if (!empty($_SESSION['masuk'])): ?>
-            <?php include "template/user.php"; ?>
-        <?php endif ?>
+        
+        <?php include "template/user.php"; ?>
     </header>
 
     <div class="container-fluid">                   
 
         <div class="row">
-           <?php include "template/nav.process.php" ?>
-       </div><!-- // .row -->
+         <?php include "template/nav.process.php" ?>
+     </div><!-- // .row -->
 
-   </div><!-- // .container -->
+ </div><!-- // .container -->
 
 </main><!-- // .o-page__content -->
 

@@ -2,10 +2,12 @@
 if (empty($_SESSION['masuk']) AND @$_GET['module']) {
 	if ($_GET['module'] == 'masuk') {
 		include "module/masuk/index.php";
-	}elseif ($_GET['module'] == 'tentangaplikasi') {
-		include "module/tentangaplikasi/index.php";
 	}elseif ($_GET['module'] == 'changelog') {
 		include "module/changelog/index.php";
+	}elseif ($_GET['module'] == 'tentangaplikasi') {
+		include "module/tentangaplikasi/index.php";
+	}elseif ($_GET['module'] == 'daftarpengguna') {
+		include "module/daftarpengguna/index.php";
 	}
 	else {
 		$_SESSION['execute'] = "<script> sweetAlert('Ehmm!', 'By Passed Detected!', 'error').then(function() {window.location = './?module=masuk'; }); </script>";

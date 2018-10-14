@@ -206,20 +206,19 @@
 	</div>
 
 	<?php  
-	$sqluser = "SELECT count(*) as useraktif FROM tb_user";
+	$sqluser = "SELECT count(*) as userterdaftar FROM tb_user";
 	$result = $mysql->query($sqluser);
 	$read = $result->fetch_assoc();
 	?>
 	<div class="col-xl-6">
 		<div class="c-graph-card" data-mh="graph-cards">
 			<div class="c-graph-card__content">
-				<h3 class="c-graph-card__title">User Aktif</h3>			
-				<h4 class="c-graph-card__number"><?= $read['useraktif'] ?></h4>
-				<p class="c-graph-card__status"><?= $read['useraktif'] ?> User Aktif di aplikasi ini</p>
+				<h3 class="c-graph-card__title">User Terdaftar</h3>			
+				<h4 class="c-graph-card__number"><?= $read['userterdaftar'] ?></h4>
+				<p class="c-graph-card__status"><?= $read['userterdaftar'] ?> User Terdaftar di aplikasi ini</p>
 			</div>
 
 			<div class="c-graph-card__chart">
-				<canvas id="js-chart-payout" width="300" height="74"></canvas>
 			</div>
 		</div>
 	</div>
@@ -232,13 +231,48 @@
 	<div class="col-xl-6">
 		<div class="c-graph-card" data-mh="graph-cards">
 			<div class="c-graph-card__content">
-				<h3 class="c-graph-card__title">Jumlah Proses Berjalan</h3>			
+				<h3 class="c-graph-card__title">Total Jumlah Proses Berjalan</h3>			
 				<h4 class="c-graph-card__number"><?= $read['jumlahproses'] ?></h4>
 				<p class="c-graph-card__status"><?= $read['jumlahproses'] ?> Proses telah Berjalan di Aplikasi ini</p>
 			</div>
 
+			<div class="c-graph-card__chart">	
+			</div>
+		</div>
+	</div>
+
+	<?php  
+	$sqluser = "SELECT count(*) as useraktif FROM tb_bot_reaction";
+	$result = $mysql->query($sqluser);
+	$read = $result->fetch_assoc();
+	?>
+	<div class="col-xl-6">
+		<div class="c-graph-card" data-mh="graph-cards">
+			<div class="c-graph-card__content">
+				<h3 class="c-graph-card__title">User Aktif Menggunakan Bot</h3>			
+				<h4 class="c-graph-card__number"><?= $read['useraktif'] ?></h4>
+				<p class="c-graph-card__status"><?= $read['useraktif'] ?> User Aktif Menggunakan Bot di aplikasi ini</p>
+			</div>
+
 			<div class="c-graph-card__chart">
-				<canvas id="js-chart-earnings" width="300" height="74"></canvas>
+			</div>
+		</div>
+	</div>
+
+	<?php  
+	$sqlprocess = "SELECT count(*) as jumlahproses FROM tb_laporan WHERE type='Bot Reaction'";
+	$result = $mysql->query($sqlprocess);
+	$read = $result->fetch_assoc();
+	?>
+	<div class="col-xl-6">
+		<div class="c-graph-card" data-mh="graph-cards">
+			<div class="c-graph-card__content">
+				<h3 class="c-graph-card__title">Jumlah Proses Bot Berjalan</h3>			
+				<h4 class="c-graph-card__number"><?= $read['jumlahproses'] ?></h4>
+				<p class="c-graph-card__status"><?= $read['jumlahproses'] ?> Proses telah Berjalan di Aplikasi ini</p>
+			</div>
+
+			<div class="c-graph-card__chart">			
 			</div>
 		</div>
 	</div>
